@@ -206,7 +206,7 @@ export default {
   }
 }
 .login-tip {
-  font-size: 13px;
+  font-size: 14px;
   text-align: center;
   color: #bfbfbf;
 }
