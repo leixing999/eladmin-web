@@ -1,14 +1,21 @@
 # https://editorconfig.org
+# 表示是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件
 root = true
 
 [*]
+# 设置文件字符集为utf-8
 charset = utf-8
+# 文件类型的缩进大小
 indent_style = space
 indent_size = 2
+# 对于所有的文件 始终在文件末尾插入一个新行
 end_of_line = lf
 insert_final_newline = true
+# 设为true表示会去除换行行首的任意空白字符。
 trim_trailing_whitespace = true
 
 [*.md]
+#  设为true表示使文件以一个空白行结尾
 insert_final_newline = false
+# 设为true表示会去除换行行首的任意空白字符。
 trim_trailing_whitespace = false

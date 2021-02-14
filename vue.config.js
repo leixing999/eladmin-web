@@ -14,10 +14,15 @@ module.exports = {
   // hash 模式下可使用
   // publicPath: process.env.NODE_ENV === 'development' ? '/' : './',
   publicPath: '/',
+  // 当运行 vue-cli-service build 时生成的生产环境构建文件的目录。注意目标目录在构建之前会被清除 (构建时传入 --no-clean 可关闭该行为)。
   outputDir: 'dist',
+  // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录
   assetsDir: 'static',
+  // 是否开启ES检测
   lintOnSave: process.env.NODE_ENV === 'development',
+  // 是否生成源码地图
   productionSourceMap: false,
+
   devServer: {
     port: port,
     open: true,
@@ -51,7 +56,15 @@ module.exports = {
         '@': resolve('src'),
         '@crud': resolve('src/components/Crud')
       }
+    },
+    optimization: {
+      minimize: false,//设置false将打包的代码不进行混淆编译
+      minimizer: [
+        //minimize可以设置true,
+        //然后可以这里参照TerserPlugin文档修改一些更细节的配置
+      ]
     }
+
   },
   chainWebpack(config) {
     config.plugins.delete('preload') // TODO: need test
@@ -98,7 +111,7 @@ module.exports = {
             .plugin('ScriptExtHtmlWebpackPlugin')
             .after('html')
             .use('script-ext-html-webpack-plugin', [{
-            // `runtime` must same as runtimeChunk name. default is `runtime`
+              // `runtime` must same as runtimeChunk name. default is `runtime`
               inline: /runtime\..*\.js$/
             }])
             .end()

@@ -37,14 +37,14 @@ Vue.use(mavonEditor)
 Vue.use(permission)
 Vue.use(dict)
 Vue.use(Element, {
-  size: Cookies.get('size') || 'small' // set element-ui default size
+	size: Cookies.get('size') || 'small' // set element-ui default size
 })
 
 Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',
-  router,
-  store,
-  render: h => h(App)
+	el: '#app',
+	router,
+	store,
+	render: h => h(App),
 })
