@@ -56,7 +56,7 @@ module.exports = {
       // it can be accessed in index.html to inject the correct title.
       // name 是配置的名称，在加载多个配置时有用
       name: name,
-      // alias 可以配置快捷引用，我们也可以配置更多快捷引用
+      // alias 可以配置快捷引用，我们也可以配置更多快捷引用1111111
       resolve: {
         alias: {
           '@': resolve('src'),
